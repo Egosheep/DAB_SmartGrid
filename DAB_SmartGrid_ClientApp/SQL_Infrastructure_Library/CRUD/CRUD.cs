@@ -3,7 +3,7 @@ using SQL_Infrastructure_Library.Entities;
 
 namespace SQL_Infrastructure_Library.CRUD
 {
-    public class CRUD<T> : ICRUD<T> where T : class, IHasIdentifier
+    public class CRUD<T>
     {
         private ProsumerContext _dbContext;
         public CRUD(ProsumerContext db)
@@ -15,17 +15,17 @@ namespace SQL_Infrastructure_Library.CRUD
             
         }
 
-        public T ReadDocument(string idOfObject)
+        public T Read(int idOfObject)
         {
             throw new System.NotImplementedException();
         }
 
-        public void ReplaceDocument(T objectToReplace)
+        public void Update(T objectToReplace)
         {
             throw new System.NotImplementedException();
         }
 
-        public void DeleteDocument(string objectToDelete)
+        public void Delete(string objectToDelete)
         {
             throw new System.NotImplementedException();
         }
