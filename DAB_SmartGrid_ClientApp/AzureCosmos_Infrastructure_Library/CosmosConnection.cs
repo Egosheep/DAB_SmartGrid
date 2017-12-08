@@ -11,9 +11,11 @@ namespace AzureCosmos_Infrastructure_Library
         private const string PrimaryKey = "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
 
         public static DocumentClient Client;
-        public const string databaseName = "KartotekDB";
-        public const string contactCollection = "ContactCollection";
-        public const string addressCollection = "AddressCollection";
+
+        public const string databaseName = "SmartGridDB";
+        public const string completedTransactionsCollection = "CompletedTransactions";
+        public const string powerInventoryCollection = "PowerInventory";
+        public const string pendingTransactionCollection = "PendingTransactions";
 
         #region Thread safe singleton Imeplementation
 
@@ -33,14 +35,15 @@ namespace AzureCosmos_Infrastructure_Library
 
         public static async Task StartUp()
         {
-            var databaseUri = UriFactory.CreateDatabaseUri("KartotekDB");
-
+            var databaseUri = UriFactory.CreateDatabaseUri(databaseName);
             Client = new DocumentClient(new Uri(EndpointUrl), PrimaryKey);
             Client.CreateDatabaseIfNotExistsAsync(new Database() { Id = databaseName }).Wait();
             Client.CreateDocumentCollectionIfNotExistsAsync(databaseUri,
-                new DocumentCollection { Id = contactCollection }).Wait();
+                new DocumentCollection { Id = completedTransactionsCollection }).Wait();
             Client.CreateDocumentCollectionIfNotExistsAsync(databaseUri,
-                new DocumentCollection { Id = addressCollection }).Wait();
+                new DocumentCollection { Id = powerInventoryCollection }).Wait();
+            Client.CreateDocumentCollectionIfNotExistsAsync(databaseUri,
+                new DocumentCollection { Id = pendingTransactionCollection }).Wait();
         }
     }
 }

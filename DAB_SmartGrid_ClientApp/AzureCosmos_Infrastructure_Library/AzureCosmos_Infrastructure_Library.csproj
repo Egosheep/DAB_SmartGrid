@@ -48,7 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\CompletedTransactions.cs" />
     <Compile Include="Collections\IHasIdentifier.cs" />
+    <Compile Include="Collections\PendingTransactions.cs" />
+    <Compile Include="Collections\PowerInventory.cs" />
     <Compile Include="CosmosConnection.cs" />
     <Compile Include="CRUD\CRUD.cs" />
     <Compile Include="Repositories\GenericRepo.cs" />
