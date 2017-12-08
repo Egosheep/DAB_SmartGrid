@@ -16,6 +16,10 @@ namespace SQL_RestApi_Client.Models
         public string ProsumerType { get; set; }
         public string Email { get; set; }
         public string Telephone { get; set; }
+
+        //Foreign key
+        public int AddressId { get; set; }
+        //Virtual Navigation property
         public virtual Address Address { get; set; }
     }
 }
