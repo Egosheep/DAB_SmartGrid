@@ -6,22 +6,22 @@ namespace AzureCosmos_Infrastructure_Library.Repositories
 {
     public class RepoFactory : IRepoFactory
     {
-        private ICompletedTransactionsRepo _completedTransactionsRepo;
-        private IPendingTransactionsRepo _pendingTransactionsRepo;
+        private ICompletedTransactionRepo _completedTransactionRepo;
+        private IPendingTransactionRepo _pendingTransactionRepo;
         private IPowerInventoryRepo _powerInventoryRepo;
 
-        ICompletedTransactionsRepo IRepoFactory.CompletedTransactionsRepo => _completedTransactionsRepo ??
-                                                                             (_completedTransactionsRepo =
-                                                                                 new CompletedTransactionsRepo(
-                                                                                     new CRUD<CompletedTransactions>(
+        ICompletedTransactionRepo IRepoFactory.CompletedTransactionRepo => _completedTransactionRepo ??
+                                                                             (_completedTransactionRepo =
+                                                                                 new CompletedTransactionRepo(
+                                                                                     new CRUD<CompletedTransaction>(
                                                                                          CosmosConnection.databaseName,
                                                                                          CosmosConnection
                                                                                              .completedTransactionsCollection)));
 
-        IPendingTransactionsRepo IRepoFactory.PendingTransactionsRepo => _pendingTransactionsRepo ??
-                                                                             (_pendingTransactionsRepo =
-                                                                                 new PendingTransactionsRepo(
-                                                                                     new CRUD<PendingTransactions>(
+        IPendingTransactionRepo IRepoFactory.PendingTransactionRepo => _pendingTransactionRepo ??
+                                                                             (_pendingTransactionRepo =
+                                                                                 new PendingTransactionRepo(
+                                                                                     new CRUD<PendingTransaction>(
                                                                                          CosmosConnection.databaseName,
                                                                                          CosmosConnection
                                                                                              .pendingTransactionCollection)));

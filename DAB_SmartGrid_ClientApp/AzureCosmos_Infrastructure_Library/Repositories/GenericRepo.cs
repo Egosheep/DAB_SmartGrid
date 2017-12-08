@@ -32,7 +32,7 @@ namespace AzureCosmos_Infrastructure_Library.Repositories
             return task.Result;
         }
 
-        public bool Delete(Guid objectToDeleteId)
+        public bool Delete(string objectToDeleteId)
         {
             var task = _crud.DeleteDocument(objectToDeleteId);
             task.Wait();

@@ -16,8 +16,8 @@ namespace AzureCosmos_RestApi_Client
     public class WebApiApplication : System.Web.HttpApplication
     {
         public static IPowerInventoryRepo PowerInventoryRepo;
-        public static ICompletedTransactionsRepo CompletedTransactionsRepo;
-        public static IPendingTransactionsRepo PendingTransactionsRepo;
+        public static ICompletedTransactionRepo CompletedTransactionRepo;
+        public static IPendingTransactionRepo PendingTransactionRepo;
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -26,8 +26,8 @@ namespace AzureCosmos_RestApi_Client
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             PowerInventoryRepo = new PowerInventoryRepo(new CRUD<PowerInventory>(CosmosConnection.databaseName, CosmosConnection.powerInventoryCollection));
-            CompletedTransactionsRepo = new CompletedTransactionsRepo(new CRUD<CompletedTransactions>(CosmosConnection.databaseName, CosmosConnection.completedTransactionsCollection));
-            PendingTransactionsRepo = new PendingTransactionsRepo(new CRUD<PendingTransactions>(CosmosConnection.databaseName, CosmosConnection.pendingTransactionCollection));
+            CompletedTransactionRepo = new CompletedTransactionRepo(new CRUD<CompletedTransaction>(CosmosConnection.databaseName, CosmosConnection.completedTransactionsCollection));
+            PendingTransactionRepo = new PendingTransactionRepo(new CRUD<PendingTransaction>(CosmosConnection.databaseName, CosmosConnection.pendingTransactionCollection));
         }
     }
 }

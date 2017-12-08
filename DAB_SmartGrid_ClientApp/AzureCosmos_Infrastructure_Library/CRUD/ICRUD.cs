@@ -9,7 +9,7 @@ namespace AzureCosmos_Infrastructure_Library.CRUD
         Task<string> CreateDocument(T objectToCreate);
         Task<T> ReadDocument(string idOfObject);
         Task<bool> ReplaceDocument(T objectToReplace);
-        Task<bool> DeleteDocument(Guid objectToDelete);
+        Task<bool> DeleteDocument(string objectToDelete);
         IOrderedQueryable<T> Query();
     }
 }

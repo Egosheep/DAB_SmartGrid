@@ -13,9 +13,9 @@ namespace AzureCosmos_Infrastructure_Library
         public static DocumentClient Client;
 
         public const string databaseName = "SmartGridDB";
-        public const string completedTransactionsCollection = "CompletedTransactions";
+        public const string completedTransactionsCollection = "CompletedTransaction";
         public const string powerInventoryCollection = "PowerInventory";
-        public const string pendingTransactionCollection = "PendingTransactions";
+        public const string pendingTransactionCollection = "PendingTransaction";
 
         #region Thread safe singleton Imeplementation
 
