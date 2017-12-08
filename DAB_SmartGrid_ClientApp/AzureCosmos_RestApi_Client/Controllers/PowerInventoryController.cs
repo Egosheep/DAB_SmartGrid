@@ -13,28 +13,31 @@ namespace AzureCosmos_RestApi_Client.Controllers
         // GET: api/PowerInventory
         public IEnumerable<PowerInventory> Get()
         {
-            return WebApiApplication.PowerInventoryRepo.
+            return WebApiApplication.PowerInventoryRepo.GetAllInventoryItems();
         }
 
         // GET: api/PowerInventory/5
-        public string Get(int id)
+        public PowerInventory Get(string id)
         {
-            return "value";
+            return WebApiApplication.PowerInventoryRepo.Get(id);
         }
 
         // POST: api/PowerInventory
-        public void Post([FromBody]string value)
+        public string Post(PowerInventory inventoryItem)
         {
+            return WebApiApplication.PowerInventoryRepo.Create(inventoryItem);
         }
 
         // PUT: api/PowerInventory/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(PowerInventory inventoryItem)
         {
+            WebApiApplication.PowerInventoryRepo.Update(inventoryItem);
         }
 
         // DELETE: api/PowerInventory/5
-        public void Delete(int id)
+        public void Delete(string id)
         {
+            WebApiApplication.PowerInventoryRepo.Delete(id);
         }
     }
 }

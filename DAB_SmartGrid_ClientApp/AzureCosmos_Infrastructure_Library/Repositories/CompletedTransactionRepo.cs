@@ -5,13 +5,13 @@ using AzureCosmos_Infrastructure_Library.CRUD;
 
 namespace AzureCosmos_Infrastructure_Library.Repositories
 {
-    public class PowerInventoryRepo : GenericRepo<PowerInventory>, IPowerInventoryRepo
+    public class CompletedTransactionRepo : GenericRepo<CompletedTransaction>, ICompletedTransactionRepo
     {
-        public PowerInventoryRepo(ICRUD<PowerInventory> crud) : base(crud)
+        public CompletedTransactionRepo(ICRUD<CompletedTransaction> crud) : base(crud)
         {
         }
 
-        public List<PowerInventory> GetAllInventoryItems()
+        public List<CompletedTransaction> GetAllCompletedTransactions()
         {
             return _crud.Query().ToList();
         }

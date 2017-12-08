@@ -30,12 +30,12 @@ namespace AzureCosmos_Infrastructure_Library.CRUD
             return documentRespons.Resource.Id;
         }
 
-        public async Task<bool> DeleteDocument(Guid objectToDelete)
+        public async Task<bool> DeleteDocument(string objectToDelete)
         {
             try
             {
                 await CosmosConnection.Client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(_databaseId,
-                    _collectionId, objectToDelete.ToString())).ConfigureAwait(false);
+                    _collectionId, objectToDelete)).ConfigureAwait(false);
                 return true;
             }
             catch (DocumentClientException de)

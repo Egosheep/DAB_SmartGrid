@@ -7,6 +7,6 @@ namespace AzureCosmos_Infrastructure_Library.Repositories
         T Get(string id);
         string Create(T objectToCreate);
         bool Update(T objectToUpdate);
-        bool Delete(Guid objectToDeleteId);
+        bool Delete(string objectToDeleteId);
     }
 }
