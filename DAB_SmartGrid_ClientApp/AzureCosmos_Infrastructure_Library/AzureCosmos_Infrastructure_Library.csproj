@@ -54,11 +54,17 @@
     <Compile Include="Collections\PowerInventory.cs" />
     <Compile Include="CosmosConnection.cs" />
     <Compile Include="CRUD\CRUD.cs" />
+    <Compile Include="Repositories\CompletedTransactionsRepo.cs" />
     <Compile Include="Repositories\GenericRepo.cs" />
     <Compile Include="CRUD\ICRUD.cs" />
+    <Compile Include="Repositories\ICompletedTransactionsRepo.cs" />
     <Compile Include="Repositories\IGenericRepo.cs" />
+    <Compile Include="Repositories\IPendingTransactionsRepo.cs" />
+    <Compile Include="Repositories\IPowerInventoryRepo.cs" />
     <Compile Include="Repositories\IRepoFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\PendingTransactionsRepo.cs" />
+    <Compile Include="Repositories\PowerInventoryRepo.cs" />
     <Compile Include="Repositories\RepoFactory.cs" />
   </ItemGroup>
   <ItemGroup>

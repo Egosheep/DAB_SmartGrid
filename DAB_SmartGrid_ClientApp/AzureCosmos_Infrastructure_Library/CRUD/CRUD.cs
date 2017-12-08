@@ -23,10 +23,11 @@ namespace AzureCosmos_Infrastructure_Library.CRUD
             _collectionUri = UriFactory.CreateDocumentCollectionUri(_databaseId, _collectionId);
         }
 
-        public async Task CreateDocument(T objectToCreate)
+        public async Task<string> CreateDocument(T objectToCreate)
         {
             var documentRespons = await CosmosConnection.Client.CreateDocumentAsync(_collectionUri, objectToCreate).ConfigureAwait(false);
             objectToCreate.Id = documentRespons.Resource.Id;
+            return documentRespons.Resource.Id;
         }
 
         public async Task<bool> DeleteDocument(Guid objectToDelete)

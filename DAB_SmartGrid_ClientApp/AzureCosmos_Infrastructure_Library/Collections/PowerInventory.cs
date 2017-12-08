@@ -2,7 +2,7 @@
 
 namespace AzureCosmos_Infrastructure_Library.Collections
 {
-    public class PowerInventory
+    public class PowerInventory : IHasIdentifier
     {
         public string Id { get; set; }
         public string SellerId { get; set; }

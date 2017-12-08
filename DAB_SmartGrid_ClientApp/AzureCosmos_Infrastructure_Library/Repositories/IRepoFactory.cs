@@ -2,6 +2,8 @@
 {
     public interface IRepoFactory
     {
-        
+        ICompletedTransactionsRepo CompletedTransactionsRepo { get; }
+        IPendingTransactionsRepo PendingTransactionsRepo { get; }
+        IPowerInventoryRepo PowerInventoryRepo { get; }
     }
 }
