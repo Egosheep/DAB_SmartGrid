@@ -5,9 +5,9 @@ namespace SQL_Infrastructure_Library.CRUD
     public interface ICRUD<T>
     {
         void Create(T objectToCreate);
-        T ReadDocument(string idOfObject);
-        void ReplaceDocument(T objectToReplace);
-        void DeleteDocument(string objectToDelete);
+        T Read(string idOfObject);
+        void Update(T objectToReplace);
+        void Delete(string objectToDelete);
         IOrderedQueryable<T> Query();
     }
 }

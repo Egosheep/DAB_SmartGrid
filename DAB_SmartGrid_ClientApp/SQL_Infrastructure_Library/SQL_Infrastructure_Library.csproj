@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CRUD\CRUD.cs" />
+    <Compile Include="CRUD\CRUDAddress.cs" />
     <Compile Include="CRUD\ICRUD.cs" />
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\ProsumerContext.cs" />
