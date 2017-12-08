@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGrid_ClientApp", "SmartGrid_ClientApp\SmartGrid_ClientApp.csproj", "{24BDA723-5B2F-4C02-AEB4-BC420EB33667}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartGrid_ServerApp", "SmartGrid_ServerApp\SmartGrid_ServerApp.csproj", "{CE9B14F1-0C92-4A37-A93B-37FA1B6C94D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL_Infrastructure_Library", "SQL_Infrastructure_Library\SQL_Infrastructure_Library.csproj", "{7B132155-920F-4C51-8656-45817E10BF93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureCosmos_Infrastructure_Library", "AzureCosmos_Infrastructure_Library\AzureCosmos_Infrastructure_Library.csproj", "{CF314CCA-A86A-4B0B-8B08-6B364BFD7EC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQL_RestApi_Client", "SQL_RestApi_Client\SQL_RestApi_Client.csproj", "{15772A7E-642F-4E11-A13C-96A8B4F3981C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureCosmos_RestApi_Client", "AzureCosmos_RestApi_Client\AzureCosmos_RestApi_Client.csproj", "{5E12D66C-B281-4A66-B456-7ADA4A47D182}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24BDA723-5B2F-4C02-AEB4-BC420EB33667}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24BDA723-5B2F-4C02-AEB4-BC420EB33667}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24BDA723-5B2F-4C02-AEB4-BC420EB33667}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24BDA723-5B2F-4C02-AEB4-BC420EB33667}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE9B14F1-0C92-4A37-A93B-37FA1B6C94D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE9B14F1-0C92-4A37-A93B-37FA1B6C94D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE9B14F1-0C92-4A37-A93B-37FA1B6C94D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE9B14F1-0C92-4A37-A93B-37FA1B6C94D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B132155-920F-4C51-8656-45817E10BF93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B132155-920F-4C51-8656-45817E10BF93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B132155-920F-4C51-8656-45817E10BF93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B132155-920F-4C51-8656-45817E10BF93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF314CCA-A86A-4B0B-8B08-6B364BFD7EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF314CCA-A86A-4B0B-8B08-6B364BFD7EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF314CCA-A86A-4B0B-8B08-6B364BFD7EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF314CCA-A86A-4B0B-8B08-6B364BFD7EC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15772A7E-642F-4E11-A13C-96A8B4F3981C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15772A7E-642F-4E11-A13C-96A8B4F3981C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15772A7E-642F-4E11-A13C-96A8B4F3981C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15772A7E-642F-4E11-A13C-96A8B4F3981C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E12D66C-B281-4A66-B456-7ADA4A47D182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E12D66C-B281-4A66-B456-7ADA4A47D182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E12D66C-B281-4A66-B456-7ADA4A47D182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E12D66C-B281-4A66-B456-7ADA4A47D182}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B02D2652-A0E1-4DC1-8239-695A8507B8EB}
+	EndGlobalSection
+EndGlobal
