@@ -22,8 +22,8 @@ namespace SmartGrid_ServerApp
                 var prosumer = loginManager.ValidateLogin(Int32.Parse(id));
                 if (prosumer != null)
                 {
-                    transactionMenu = new TransactionMenu(prosumer);
-                    Console.WriteLine("Welcome " + prosumer.FirstName + prosumer.LastName);
+                    transactionMenu = new TransactionMenu(prosumer.Result);
+                    Console.WriteLine("Welcome " + prosumer.Result.FirstName + prosumer.Result.LastName);
                     Console.WriteLine("Directing to Transactionmenu");
                     transactionMenu.DisplayMenu();
                 }
