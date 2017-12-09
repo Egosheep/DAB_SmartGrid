@@ -4,12 +4,12 @@ namespace SmartGrid_ServerApp
 {
     public class TransactionMenu : IMenu
     {
-        private Prosumer prosumer;
-        private ITransactionManager transactionManager;
-        public TransactionMenu(Prosumer _prosumer)
+        private Prosumer _prosumer;
+        private ITransactionManager _transactionManager;
+        public TransactionMenu(Prosumer prosumer)
         {
-            prosumer = _prosumer;
-            transactionManager = new TransactionManager();
+            _prosumer = prosumer;
+            _transactionManager = new TransactionManager();
         }
         public void DisplayMenu()
         {

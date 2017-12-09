@@ -1,7 +1,9 @@
-﻿namespace SmartGrid_ServerApp
+﻿using System.Threading.Tasks;
+
+namespace SmartGrid_ServerApp
 {
     public interface ILoginManager
     {
-        Prosumer ValidateLogin(int id);
+        Task<Prosumer> ValidateLogin(int id);
     }
 }

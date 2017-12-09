@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 using System.Threading;
 
 namespace SmartGrid_ServerApp
@@ -7,6 +8,7 @@ namespace SmartGrid_ServerApp
     {
         private ILoginManager loginManager;
         private IMenu transactionMenu;
+        public static HttpClient Client = new HttpClient();
         public MainMenu(ILoginManager _loginManager)
         {
             loginManager = _loginManager;
