@@ -2,6 +2,6 @@
 {
     public interface IPriceRegulator
     {
-        double CalculateToken(IPendingTransaction transaction);
+        double CalculateToken(PendingTransaction transaction);
     }
 }
