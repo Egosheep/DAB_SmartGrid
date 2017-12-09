@@ -42,12 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs" />
     <Compile Include="IConsolePrint.cs" />
     <Compile Include="ILoginManager.cs" />
-    <Compile Include="IMenu.cs" />
+    <Compile Include="IPendingTransaction.cs" />
+    <Compile Include="IProsumer.cs" />
+    <Compile Include="Menu\BuyMenu.cs" />
+    <Compile Include="Menu\IMenu.cs" />
     <Compile Include="IPriceRegulator.cs" />
     <Compile Include="ITransactionManager.cs" />
     <Compile Include="ITransactionSettler.cs" />
+    <Compile Include="Menu\MainMenu.cs" />
+    <Compile Include="Menu\SellMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

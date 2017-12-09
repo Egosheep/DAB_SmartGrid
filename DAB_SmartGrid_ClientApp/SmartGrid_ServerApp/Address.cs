@@ -1,6 +1,6 @@
 ﻿namespace SmartGrid_ServerApp
 {
-    public interface IMenu
+    public class Address
     {
         
     }
