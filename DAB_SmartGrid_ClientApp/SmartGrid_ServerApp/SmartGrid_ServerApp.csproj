@@ -46,6 +46,7 @@
     <Compile Include="IConsolePrint.cs" />
     <Compile Include="ILoginManager.cs" />
     <Compile Include="IPendingTransaction.cs" />
+    <Compile Include="MarketSettings.cs" />
     <Compile Include="Prosumer.cs" />
     <Compile Include="Menu\BuyMenu.cs" />
     <Compile Include="Menu\IMenu.cs" />
