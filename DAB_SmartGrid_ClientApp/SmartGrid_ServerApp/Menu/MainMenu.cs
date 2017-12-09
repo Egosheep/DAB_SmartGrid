@@ -7,6 +7,10 @@ namespace SmartGrid_ServerApp
     {
         private ILoginManager loginManager;
         private IMenu transactionMenu;
+        public MainMenu(ILoginManager _loginManager)
+        {
+            loginManager = _loginManager;
+        }
         public void DisplayMenu()
         {
             while(true)
@@ -16,7 +20,8 @@ namespace SmartGrid_ServerApp
                 var prosumer = loginManager.ValidateLogin(Int32.Parse(id));
                 if (prosumer != null)
                 {
-                    Console.WriteLine("Welcome " + prosumer.firstname + prosumer.lastname);
+                    transactionMenu = new TransactionMenu(prosumer);
+                    Console.WriteLine("Welcome " + prosumer.FirstName + prosumer.LastName);
                     Console.WriteLine("Directing to Transactionmenu");
                     transactionMenu.DisplayMenu();
                 }

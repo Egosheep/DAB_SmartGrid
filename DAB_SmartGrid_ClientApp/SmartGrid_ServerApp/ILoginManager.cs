@@ -2,6 +2,6 @@
 {
     public interface ILoginManager
     {
-        IProsumer ValidateLogin(int id);
+        Prosumer ValidateLogin(int id);
     }
 }
