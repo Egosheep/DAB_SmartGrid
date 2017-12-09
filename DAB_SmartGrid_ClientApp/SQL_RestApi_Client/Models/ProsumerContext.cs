@@ -22,5 +22,7 @@ namespace SQL_RestApi_Client.Models
         public System.Data.Entity.DbSet<SQL_RestApi_Client.Models.Address> Addresses { get; set; }
 
         public System.Data.Entity.DbSet<SQL_RestApi_Client.Models.Prosumer> Prosumers { get; set; }
+
+        public System.Data.Entity.DbSet<SQL_RestApi_Client.Models.SmartGridInfo> SmartGridInfoes { get; set; }
     }
 }

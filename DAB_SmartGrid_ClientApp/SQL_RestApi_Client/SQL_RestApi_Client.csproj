@@ -193,6 +193,7 @@
     <Compile Include="Controllers\AddressesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProsumersController.cs" />
+    <Compile Include="Controllers\SmartGridInfoesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -204,10 +205,15 @@
     <Compile Include="Migrations\201712091150337_Seedmethod.Designer.cs">
       <DependentUpon>201712091150337_Seedmethod.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712091448094_SmartGridInfoAdded.cs" />
+    <Compile Include="Migrations\201712091448094_SmartGridInfoAdded.Designer.cs">
+      <DependentUpon>201712091448094_SmartGridInfoAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Prosumer.cs" />
     <Compile Include="Models\ProsumerContext.cs" />
+    <Compile Include="Models\SmartGridInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -284,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712091150337_Seedmethod.resx">
       <DependentUpon>201712091150337_Seedmethod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712091448094_SmartGridInfoAdded.resx">
+      <DependentUpon>201712091448094_SmartGridInfoAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

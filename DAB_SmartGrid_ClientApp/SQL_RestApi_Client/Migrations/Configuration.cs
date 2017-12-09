@@ -110,6 +110,10 @@ namespace SQL_RestApi_Client.Migrations
                 new Prosumer() { Id = 44, FirstName = "Vilma", MiddleNames = "", LastName = "Norsegod", AddressId = 2, Email = "Norsegod44@post.dk", Telephone = "12395678", ProsumerType = "Bolig" },
                 new Prosumer() { Id = 45, FirstName = "Pun", MiddleNames = "Puns", LastName = "Punny", AddressId = 1, Email = "Punny45@post.dk", Telephone = "12345678", ProsumerType = "Bolig" }
                 );
+
+            context.SmartGridInfoes.AddOrUpdate(x => x.Id,
+                new SmartGridInfo() { Id = 1, kiloWattPrice = 1, nationalGridPrice = 1, tokenPrice =  1, timeStamp = DateTime.Now}
+                );
         }
     }
 }
