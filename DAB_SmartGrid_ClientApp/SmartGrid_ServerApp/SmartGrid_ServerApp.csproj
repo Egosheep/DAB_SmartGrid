@@ -42,24 +42,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Address.cs" />
+    <Compile Include="Prosumer\Address.cs" />
     <Compile Include="IConsolePrint.cs" />
-    <Compile Include="ILoginManager.cs" />
-    <Compile Include="IPendingTransaction.cs" />
+    <Compile Include="Prosumer\ILoginManager.cs" />
+    <Compile Include="Transactions\IPendingTransaction.cs" />
+    <Compile Include="Prosumer\LoginManager.cs" />
     <Compile Include="MarketSettings.cs" />
-    <Compile Include="Prosumer.cs" />
+    <Compile Include="Prosumer\Prosumer.cs" />
     <Compile Include="Menu\IMenu.cs" />
     <Compile Include="IPriceRegulator.cs" />
-    <Compile Include="ITransactionManager.cs" />
-    <Compile Include="ITransactionSettler.cs" />
+    <Compile Include="Transactions\ITransactionManager.cs" />
+    <Compile Include="Transactions\ITransactionSettler.cs" />
     <Compile Include="Menu\MainMenu.cs" />
     <Compile Include="Menu\TransactionMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TransactionManager.cs" />
+    <Compile Include="Transactions\PendingTransaction.cs" />
+    <Compile Include="Transactions\TransactionManager.cs" />
+    <Compile Include="Transactions\TransactionSettler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

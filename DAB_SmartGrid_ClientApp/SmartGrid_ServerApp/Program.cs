@@ -10,6 +10,8 @@ namespace SmartGrid_ServerApp
     {
         static void Main(string[] args)
         {
+            var lmanager = new LoginManager();
+            var mainmenu = new MainMenu(lmanager);
         }
     }
 }
