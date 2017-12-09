@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IConsolePrint.cs" />
+    <Compile Include="ILoginManager.cs" />
+    <Compile Include="IMenu.cs" />
+    <Compile Include="IPriceRegulator.cs" />
+    <Compile Include="ITransactionManager.cs" />
+    <Compile Include="ITransactionSettler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
