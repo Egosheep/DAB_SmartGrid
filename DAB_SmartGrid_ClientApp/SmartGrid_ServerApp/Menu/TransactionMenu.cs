@@ -31,8 +31,21 @@ namespace SmartGrid_ServerApp
                             Thread.Sleep(1000);
                             break;
                         }
+                        Console.WriteLine("Transaction has been created");
+                        Thread.Sleep(1000);
                         break;
                     case "b":
+                        Console.Clear();
+                        Console.WriteLine("How many kWh do you want to buy? ");
+                        var kwhToBuy = Console.ReadLine();
+                        if (!ContainsOnlyDigits(kwhToBuy))
+                        {
+                            Console.WriteLine("U entered invalid number");
+                            Thread.Sleep(1000);
+                            break;
+                        }
+                        Console.WriteLine("Transaction has been created");
+                        Thread.Sleep(1000);
                         break;
                     case "p":
                         break;
