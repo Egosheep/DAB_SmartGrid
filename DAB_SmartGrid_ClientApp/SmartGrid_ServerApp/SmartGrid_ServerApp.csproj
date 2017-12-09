@@ -48,15 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PowerInventory.cs" />
     <Compile Include="Prosumer\Address.cs" />
     <Compile Include="IConsolePrint.cs" />
     <Compile Include="Prosumer\ILoginManager.cs" />
-    <Compile Include="Transactions\IPendingTransaction.cs" />
     <Compile Include="Prosumer\LoginManager.cs" />
     <Compile Include="MarketSettings.cs" />
     <Compile Include="Prosumer\Prosumer.cs" />
     <Compile Include="Menu\IMenu.cs" />
     <Compile Include="IPriceRegulator.cs" />
+    <Compile Include="Transactions\CompletedTransaction.cs" />
     <Compile Include="Transactions\ITransactionManager.cs" />
     <Compile Include="Transactions\ITransactionSettler.cs" />
     <Compile Include="Menu\MainMenu.cs" />
