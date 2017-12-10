@@ -6,26 +6,29 @@ namespace SmartGrid_ServerApp
 {
     public class MainMenu : IMenu
     {
-        private ILoginManager loginManager;
-        private IMenu transactionMenu;
-        public static HttpClient Client = new HttpClient();
-        public MainMenu(ILoginManager _loginManager)
+        private readonly ILoginManager _loginManager;
+        private IMenu _transactionMenu;
+        private readonly IConsolePrinter _consolePrinter;
+
+        public MainMenu(ILoginManager loginManager)
         {
-            loginManager = _loginManager;
+            _loginManager = loginManager;
+            _consolePrinter = new ConsolePrinter();
         }
         public void DisplayMenu()
         {
             while(true)
             {
-                Console.WriteLine("Welcome to SmartPowerGrid. Please Enter Your ID: ");
+                _consolePrinter.PrinterCenteredHeader("Welcome to SmartPowerGrid.");
+                Console.Write("Please Enter Your ID: ");
                 var id = Console.ReadLine();
-                var prosumer = loginManager.ValidateLogin(Int32.Parse(id));
+                var prosumer = _loginManager.ValidateLogin(int.Parse(id));
                 if (prosumer != null)
                 {
-                    transactionMenu = new TransactionMenu(prosumer.Result);
+                    _transactionMenu = new TransactionMenu(prosumer.Result);
                     Console.WriteLine("Welcome " + prosumer.Result.FirstName + prosumer.Result.LastName);
-                    Console.WriteLine("Directing to Transactionmenu");
-                    transactionMenu.DisplayMenu();
+                    Console.WriteLine("Directing to Transaction Menu");
+                    _transactionMenu.DisplayMenu();
                 }
                 else
                 {

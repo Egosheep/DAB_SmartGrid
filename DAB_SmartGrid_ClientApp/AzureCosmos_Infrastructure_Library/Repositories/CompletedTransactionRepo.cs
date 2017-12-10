@@ -15,5 +15,10 @@ namespace AzureCosmos_Infrastructure_Library.Repositories
         {
             return _crud.Query().ToList();
         }
+
+        public List<CompletedTransaction> WhereQuery(string options)
+        {
+            return _crud.Query().Where(f => f.SellerId == options || f.BuyerId == options).ToList();
+        }
     }
 }

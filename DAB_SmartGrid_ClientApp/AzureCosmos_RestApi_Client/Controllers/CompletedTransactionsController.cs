@@ -33,5 +33,12 @@ namespace AzureCosmos_RestApi_Client.Controllers
         {
             WebApiApplication.CompletedTransactionRepo.Delete(id);
         }
+
+        // QUERY: api/CompletedTransactions/5
+        [HttpGet]
+        public IEnumerable<CompletedTransaction> Query(string queryOption)
+        {
+            return WebApiApplication.CompletedTransactionRepo.WhereQuery(queryOption);
+        }
     }
 }

@@ -10,14 +10,18 @@ namespace SmartGrid_ServerApp
 {
     class Program
     {
+        public static IPriceRegulator PriceRegulator;
         static void Main(string[] args)
         {
+            AzureWebApiCaller.Client.BaseAddress = new Uri("http://localhost:58644/api/");
+            AzureWebApiCaller.Client.DefaultRequestHeaders.Accept.Clear();
+            AzureWebApiCaller.Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            SqlWebApiCaller.Client.BaseAddress = new Uri("http://localhost:58622/api/");
+            SqlWebApiCaller.Client.DefaultRequestHeaders.Accept.Clear();
+            SqlWebApiCaller.Client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var loginManager = new LoginManager();
+            PriceRegulator = new PriceRegulator();
             var mainmenu = new MainMenu(loginManager);
-            WebApiCaller.Client.BaseAddress = new Uri("http://localhost:64195/");
-            WebApiCaller.Client.DefaultRequestHeaders.Accept.Clear();
-            WebApiCaller.Client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
         }
     }
 }

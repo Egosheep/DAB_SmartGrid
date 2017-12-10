@@ -9,5 +9,10 @@ namespace SmartGrid_ServerApp
         public string BuyerId { get; set; }
         public DateTime TransactionTime { get; set; }
         public string PowerAmount { get; set; }
+
+        public override string ToString()
+        {
+            return "Seller ID: " + SellerId + ".\nBuyer ID: " + BuyerId + ".\nTransaction Time: " + TransactionTime.ToShortDateString() + " " + TransactionTime.ToShortTimeString() + ".\nPower transferred: " + PowerAmount + ".";
+        }
     }
 }

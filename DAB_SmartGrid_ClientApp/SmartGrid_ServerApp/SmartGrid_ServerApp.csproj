@@ -48,26 +48,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PowerInventory.cs" />
-    <Compile Include="Prosumer\Address.cs" />
-    <Compile Include="IConsolePrint.cs" />
+    <Compile Include="ConsolePrinter.cs" />
+    <Compile Include="DataModels\SmartGridInfo.cs" />
+    <Compile Include="PriceRegulator.cs" />
+    <Compile Include="WebApiCallers\AzureWebApiCaller.cs" />
+    <Compile Include="DataModels\PowerInventory.cs" />
+    <Compile Include="DataModels\Address.cs" />
+    <Compile Include="IConsolePrinter.cs" />
     <Compile Include="Prosumer\ILoginManager.cs" />
     <Compile Include="Prosumer\LoginManager.cs" />
-    <Compile Include="MarketSettings.cs" />
-    <Compile Include="Prosumer\Prosumer.cs" />
+    <Compile Include="DataModels\Prosumer.cs" />
     <Compile Include="Menu\IMenu.cs" />
     <Compile Include="IPriceRegulator.cs" />
-    <Compile Include="Transactions\CompletedTransaction.cs" />
+    <Compile Include="DataModels\CompletedTransaction.cs" />
     <Compile Include="Transactions\ITransactionManager.cs" />
     <Compile Include="Transactions\ITransactionSettler.cs" />
     <Compile Include="Menu\MainMenu.cs" />
     <Compile Include="Menu\TransactionMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Transactions\PendingTransaction.cs" />
+    <Compile Include="DataModels\PendingTransaction.cs" />
     <Compile Include="Transactions\TransactionManager.cs" />
     <Compile Include="Transactions\TransactionSettler.cs" />
-    <Compile Include="WebApiCaller.cs" />
+    <Compile Include="WebApiCallers\SqlWebApiCaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

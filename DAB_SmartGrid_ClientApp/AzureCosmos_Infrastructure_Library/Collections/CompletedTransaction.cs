@@ -10,6 +10,5 @@ namespace AzureCosmos_Infrastructure_Library.Collections
         public DateTime TransactionTime { get; set; }
         public string PowerAmount { get; set; }
         public string TransactionPrice { get; set; }
-        public string PowerValueAtTransaction { get; set; }
     }
 }

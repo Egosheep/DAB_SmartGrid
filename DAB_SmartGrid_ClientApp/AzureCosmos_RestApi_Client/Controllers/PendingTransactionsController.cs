@@ -28,16 +28,17 @@ namespace AzureCosmos_RestApi_Client.Controllers
             return WebApiApplication.PendingTransactionRepo.Create(pendingTransaction);
         }
 
-        // PUT: api/PendingTransaction/5
-        public void Put(PendingTransaction pendingTransaction)
-        {
-            WebApiApplication.PendingTransactionRepo.Update(pendingTransaction);
-        }
-
         // DELETE: api/PendingTransaction/5
         public void Delete(string id)
         {
             WebApiApplication.PendingTransactionRepo.Delete(id);
+        }
+
+        // QUERY: api/PendingTransaction/5
+        [HttpGet]
+        public IEnumerable<PendingTransaction> Query(string options)
+        {
+            return WebApiApplication.PendingTransactionRepo.WhereQuery(options);
         }
     }
 }

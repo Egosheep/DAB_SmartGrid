@@ -6,5 +6,6 @@ namespace AzureCosmos_Infrastructure_Library.Repositories
     public interface IPendingTransactionRepo : IGenericRepo<PendingTransaction>
     {
         List<PendingTransaction> GetAllPendingTransactions();
+        List<PendingTransaction> WhereQuery(string options);
     }
 }

@@ -7,11 +7,10 @@ namespace SmartGrid_ServerApp
 {
     public class LoginManager : ILoginManager
     {
-        private const string _path = "";
-
         public async Task<Prosumer> ValidateLogin(int id)
         {
-            HttpResponseMessage response = await WebApiCaller.Client.GetAsync(_path);
+            var getPath = SqlWebApiCaller.Client.BaseAddress + "Prosumers/Get/" + id;
+            HttpResponseMessage response = await SqlWebApiCaller.Client.GetAsync(getPath);
             if (response.IsSuccessStatusCode)
             {
                 return await response.Content.ReadAsAsync<Prosumer>();

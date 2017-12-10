@@ -2,7 +2,7 @@
 {
     public interface ITransactionManager
     {
-        void CreatePowerInventoryItem(Prosumer prosumer);
-        PendingTransaction CreateTransaction(Prosumer prosumer, PowerInventory inventory);
+        void CreatePowerInventoryItem(Prosumer prosumer, string powerToSell);
+        void CreateTransaction(Prosumer prosumer, string powerToBuy);
     }
 }
