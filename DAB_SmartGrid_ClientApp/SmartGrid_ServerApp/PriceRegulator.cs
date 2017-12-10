@@ -40,7 +40,7 @@ namespace SmartGrid_ServerApp
 
         private SmartGridInfo ReadLatestSmartGridInfo()
         {
-            var getPath = SqlWebApiCaller.Client.BaseAddress + "SmartGridInfoes/Get";
+            var getPath = SqlWebApiCaller.Client.BaseAddress + "SmartGridInfoes/";
             var receive = SqlWebApiCaller.Client.GetAsync(getPath);
             var test = receive.Result.IsSuccessStatusCode;
             
@@ -59,7 +59,7 @@ namespace SmartGrid_ServerApp
 
         private void SaveSmartGridInfo()
         {
-            var postPath = SqlWebApiCaller.Client.BaseAddress + "SmartGridInfoes/Post";
+            var postPath = SqlWebApiCaller.Client.BaseAddress + "SmartGridInfoes/";
             SqlWebApiCaller.Client.PostAsJsonAsync(postPath, _smartGridInfo);
         }
     }

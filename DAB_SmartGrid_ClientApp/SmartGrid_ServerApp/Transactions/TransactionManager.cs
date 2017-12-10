@@ -23,38 +23,44 @@ namespace SmartGrid_ServerApp
             var inventory = GetPowerFromInventory(powerToBuy);
             var newPendingTransaction = new PendingTransaction()
             {
-                SellerId = inventory.Id,
+                SellerId = "National Power Grid",
                 BuyerId = prosumer.Id.ToString(),
                 PowerAmount = powerToBuy,
                 TransactionTime = DateTime.Now.ToLocalTime(),
             };
             var powerInventory = GetPowerFromInventory(powerToBuy);
-            if (powerInventory == null)
+            if (powerInventory != null)
             {
-                newPendingTransaction.SellerId = "National Power Grid";
-            }
-            
-            StoreTransaction(newPendingTransaction);
-            inventory.PowerAmount = (int.Parse(inventory.PowerAmount) - int.Parse(powerToBuy)).ToString();
-            if (int.Parse(inventory.PowerAmount) > 0)
-            {
-                UpdatePowerInventoryItem(inventory);
+                newPendingTransaction.SellerId = inventory.SellerId;
+                StoreTransaction(newPendingTransaction);
+                inventory.PowerAmount = (int.Parse(inventory.PowerAmount) - int.Parse(powerToBuy)).ToString();
+                if (int.Parse(inventory.PowerAmount) > 0)
+                {
+                    UpdatePowerInventoryItem(inventory);
+                }
+                else
+                {
+                    DeletePowerInventoryItem(inventory);
+                }
             }
             else
             {
-                DeletePowerInventoryItem(inventory);
+                StoreTransaction(newPendingTransaction);
             }
+            
+            
+            
         }
 
         private void StoreTransaction(PendingTransaction pendingTransaction)
         {
-            var postPath = AzureWebApiCaller.Client.BaseAddress + "PendingTransactions/Post";
+            var postPath = AzureWebApiCaller.Client.BaseAddress + "PendingTransactions/";
             AzureWebApiCaller.Client.PostAsJsonAsync(postPath, pendingTransaction);
         }
 
         private void StorePowerInventoryItem(PowerInventory itemToStore)
         {
-            var postPath = AzureWebApiCaller.Client.BaseAddress + "PowerInventory/Post";
+            var postPath = AzureWebApiCaller.Client.BaseAddress + "PowerInventory/";
             AzureWebApiCaller.Client.PostAsJsonAsync(postPath, itemToStore);
         }
 
@@ -64,18 +70,25 @@ namespace SmartGrid_ServerApp
             var powerReturn = AzureWebApiCaller.Client.GetAsync(getPath);
             var powerList = powerReturn.Result.Content.ReadAsAsync<List<PowerInventory>>().Result;
             var powerAmountWhere = powerList.Where(f => int.Parse(f.PowerAmount) >= int.Parse(powerToBuy));
-            return powerAmountWhere.First();
+            if (powerAmountWhere.Any())
+            {
+                return powerAmountWhere.First();
+            }
+            else
+            {
+                return null;
+            }
         }
 
         private void DeletePowerInventoryItem(PowerInventory item)
         {
-            var deletePath = AzureWebApiCaller.Client.BaseAddress + "PowerInventory/Delete/" + item.Id;
+            var deletePath = AzureWebApiCaller.Client.BaseAddress + "PowerInventory/" + item.Id;
             AzureWebApiCaller.Client.DeleteAsync(deletePath);
         }
 
         private void UpdatePowerInventoryItem(PowerInventory item)
         {
-            var putPath = AzureWebApiCaller.Client.BaseAddress + "PowerInventory/Put/" + item.Id;
+            var putPath = AzureWebApiCaller.Client.BaseAddress + "PowerInventory/" + item.Id;
             AzureWebApiCaller.Client.PutAsJsonAsync(putPath, item);
         }
     }

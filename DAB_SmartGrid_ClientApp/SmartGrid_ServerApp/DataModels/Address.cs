@@ -1,5 +1,7 @@
 ﻿namespace SmartGrid_ServerApp
 {
+    using Newtonsoft.Json;
+
     public class Address
     {
         public int Id { get; set; }

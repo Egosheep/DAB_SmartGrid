@@ -31,14 +31,14 @@ namespace SmartGrid_ServerApp
 
         private List<PendingTransaction> GetPendingTransactions()
         {
-            var getPath = AzureWebApiCaller.Client.BaseAddress + "PendingTransactions/Get";
+            var getPath = AzureWebApiCaller.Client.BaseAddress + "PendingTransactions/";
             var httpRecieve = AzureWebApiCaller.Client.GetAsync(getPath);
             return httpRecieve.Result.Content.ReadAsAsync<List<PendingTransaction>>().Result;
         }
 
         private void SaveCompletedTransactions(CompletedTransaction transactionToSave)
         {
-            var postPath = AzureWebApiCaller.Client.BaseAddress + "CompletedTransactions/Post";
+            var postPath = AzureWebApiCaller.Client.BaseAddress + "CompletedTransactions/";
             AzureWebApiCaller.Client.PostAsJsonAsync(postPath, transactionToSave);
         }
     }
