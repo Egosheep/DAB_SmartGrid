@@ -11,6 +11,7 @@ namespace SmartGrid_ServerApp
         {
             var newItem = new PowerInventory()
             {
+                Id = Guid.NewGuid().ToString(),
                 PowerAmount = powerToSell,
                 SellerId = prosumer.Id.ToString(),
                 TransactionTime = DateTime.Now.ToLocalTime()
