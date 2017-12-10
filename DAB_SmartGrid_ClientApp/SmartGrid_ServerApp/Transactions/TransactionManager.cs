@@ -62,7 +62,7 @@ namespace SmartGrid_ServerApp
         private void StorePowerInventoryItem(PowerInventory itemToStore)
         {
             var postPath = AzureWebApiCaller.Client.BaseAddress + "PowerInventory/";
-            AzureWebApiCaller.Client.PostAsJsonAsync(postPath, itemToStore).ConfigureAwait(false);
+            AzureWebApiCaller.Client.PostAsJsonAsync(postPath, itemToStore);
         }
 
         private PowerInventory GetPowerFromInventory(string powerToBuy)

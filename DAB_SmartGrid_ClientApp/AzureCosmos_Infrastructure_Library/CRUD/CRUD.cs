@@ -25,7 +25,7 @@ namespace AzureCosmos_Infrastructure_Library.CRUD
 
         public async Task<string> CreateDocument(T objectToCreate)
         {
-            var documentRespons = await CosmosConnection.Client.CreateDocumentAsync(_collectionUri, objectToCreate).ConfigureAwait(false);
+            var documentRespons = await CosmosConnection.Client.CreateDocumentAsync(_collectionUri, objectToCreate);
             objectToCreate.Id = documentRespons.Resource.Id;
             return documentRespons.Resource.Id;
         }
@@ -35,7 +35,7 @@ namespace AzureCosmos_Infrastructure_Library.CRUD
             try
             {
                 await CosmosConnection.Client.DeleteDocumentAsync(UriFactory.CreateDocumentUri(_databaseId,
-                    _collectionId, objectToDelete)).ConfigureAwait(false);
+                    _collectionId, objectToDelete));
                 return true;
             }
             catch (DocumentClientException de)
@@ -64,7 +64,7 @@ namespace AzureCosmos_Infrastructure_Library.CRUD
             try
             {
                 var documentResponse = await CosmosConnection.Client.ReadDocumentAsync<T>(UriFactory.CreateDocumentUri(
-                    _databaseId, _collectionId, idOfObject)).ConfigureAwait(false);
+                    _databaseId, _collectionId, idOfObject));
                 return documentResponse.Document;
             }
             catch (DocumentClientException de)
@@ -82,7 +82,7 @@ namespace AzureCosmos_Infrastructure_Library.CRUD
             try
             {
                 await CosmosConnection.Client.ReplaceDocumentAsync(
-                    UriFactory.CreateDocumentUri(_databaseId, _collectionId, objectToReplace.Id), objectToReplace).ConfigureAwait(false);
+                    UriFactory.CreateDocumentUri(_databaseId, _collectionId, objectToReplace.Id), objectToReplace);
                 return true;
             }
             catch (DocumentClientException de)
