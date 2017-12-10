@@ -42,7 +42,8 @@ namespace SmartGrid_ServerApp
         {
             var getPath = SqlWebApiCaller.Client.BaseAddress + "SmartGridInfoes/Get";
             var receive = SqlWebApiCaller.Client.GetAsync(getPath);
-            return receive.Result.Content.ReadAsAsync<List<SmartGridInfo>>().Result.Last();
+            var get = receive.Result.Content.ReadAsAsync<List<SmartGridInfo>>().Result;
+            return get.Last();
         }
 
         private void SaveSmartGridInfo()

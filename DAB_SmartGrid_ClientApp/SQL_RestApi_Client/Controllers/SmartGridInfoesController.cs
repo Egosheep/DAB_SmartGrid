@@ -18,9 +18,9 @@ namespace SQL_RestApi_Client.Controllers
         private ProsumerContext db = new ProsumerContext();
 
         // GET: api/SmartGridInfoes
-        public IQueryable<SmartGridInfo> GetSmartGridInfoes()
+        public IEnumerable<SmartGridInfo> GetSmartGridInfoes()
         {
-            return db.SmartGridInfoes;
+            return db.SmartGridInfoes.ToList();
         }
 
         // GET: api/SmartGridInfoes/5
