@@ -22,12 +22,13 @@ namespace SmartGrid_ServerApp
                 _consolePrinter.PrinterCenteredHeader("Welcome to SmartPowerGrid.");
                 Console.Write("Please Enter Your ID: ");
                 var id = Console.ReadLine();
-                var prosumer = _loginManager.ValidateLogin(int.Parse(id));
+                var prosumer = _loginManager.ValidateLogin(int.Parse(id)).Result;
                 if (prosumer != null)
                 {
-                    _transactionMenu = new TransactionMenu(prosumer.Result);
-                    Console.WriteLine("Welcome " + prosumer.Result.FirstName + prosumer.Result.LastName);
+                    _transactionMenu = new TransactionMenu(prosumer);
+                    Console.WriteLine("Welcome " + prosumer.FirstName + " " + prosumer.LastName);
                     Console.WriteLine("Directing to Transaction Menu");
+                    Thread.Sleep(1000);
                     _transactionMenu.DisplayMenu();
                 }
                 else

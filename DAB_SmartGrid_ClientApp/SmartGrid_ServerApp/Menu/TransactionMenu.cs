@@ -86,7 +86,7 @@ namespace SmartGrid_ServerApp
 
         private void ShowTransactionHistory(Prosumer prosumer)
         {
-            var getPath = AzureWebApiCaller.Client.BaseAddress + "Get/CompletedTransactions?queryOption="+prosumer.Id;
+            var getPath = AzureWebApiCaller.Client.BaseAddress + "/CompletedTransactions?queryOption="+prosumer.Id;
             var receive = AzureWebApiCaller.Client.GetAsync(getPath).Result.Content
                 .ReadAsAsync<List<CompletedTransaction>>().Result;
             Console.Clear();
@@ -95,11 +95,12 @@ namespace SmartGrid_ServerApp
                 Console.WriteLine(completedTransaction.ToString());
                 Console.WriteLine();
             }
+            Console.ReadKey();
         }
 
         private void ShowPendingTransactions(Prosumer prosumer)
         {
-            var getPath = AzureWebApiCaller.Client.BaseAddress + "Get/PendingTransactions?queryOptions=" + prosumer.Id;
+            var getPath = AzureWebApiCaller.Client.BaseAddress + "/PendingTransactions?queryOptions=" + prosumer.Id;
             var receive = AzureWebApiCaller.Client.GetAsync(getPath).Result.Content.ReadAsAsync<List<PendingTransaction>>().Result;
             Console.Clear();
             foreach (var pendingTransaction in receive)
@@ -107,6 +108,7 @@ namespace SmartGrid_ServerApp
                 Console.WriteLine(pendingTransaction.ToString());
                 Console.WriteLine();
             }
+            Console.ReadKey();
         }
     }
 }

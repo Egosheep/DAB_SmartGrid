@@ -9,7 +9,7 @@ namespace SmartGrid_ServerApp
     {
         public async Task<Prosumer> ValidateLogin(int id)
         {
-            var getPath = SqlWebApiCaller.Client.BaseAddress + "Prosumers/Get/" + id;
+            var getPath = SqlWebApiCaller.Client.BaseAddress + "Prosumers/" + id;
             HttpResponseMessage response = await SqlWebApiCaller.Client.GetAsync(getPath);
             if (response.IsSuccessStatusCode)
             {

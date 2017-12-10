@@ -22,6 +22,7 @@ namespace SmartGrid_ServerApp
             var loginManager = new LoginManager();
             PriceRegulator = new PriceRegulator();
             var mainmenu = new MainMenu(loginManager);
+            mainmenu.DisplayMenu();
         }
     }
 }

@@ -60,7 +60,7 @@ namespace SmartGrid_ServerApp
 
         private PowerInventory GetPowerFromInventory(string powerToBuy)
         {
-            var getPath = AzureWebApiCaller.Client.BaseAddress + "PowerInventory/Get";
+            var getPath = AzureWebApiCaller.Client.BaseAddress + "PowerInventory/";
             var powerReturn = AzureWebApiCaller.Client.GetAsync(getPath);
             var powerList = powerReturn.Result.Content.ReadAsAsync<List<PowerInventory>>().Result;
             var powerAmountWhere = powerList.Where(f => int.Parse(f.PowerAmount) >= int.Parse(powerToBuy));
