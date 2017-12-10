@@ -6,7 +6,7 @@ namespace SmartGrid_ServerApp
 
     public class PendingTransaction
     {
-        [JsonProperty(PropertyName = "id")]
+        
 
         public string Id { get; set; }
         public string SellerId { get; set; }
