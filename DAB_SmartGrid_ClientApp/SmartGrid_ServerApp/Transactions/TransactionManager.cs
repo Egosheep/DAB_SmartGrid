@@ -48,9 +48,6 @@ namespace SmartGrid_ServerApp
             {
                 StoreTransaction(newPendingTransaction);
             }
-            
-            
-            
         }
 
         private void StoreTransaction(PendingTransaction pendingTransaction)

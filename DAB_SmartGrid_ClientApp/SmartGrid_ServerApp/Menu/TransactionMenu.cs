@@ -10,12 +10,14 @@ namespace SmartGrid_ServerApp
         private readonly Prosumer _prosumer;
         private ITransactionManager _transactionManager;
         private readonly IConsolePrinter _consolePrinter;
+        private ITransactionSettler _transactionSettler;
 
         public TransactionMenu(Prosumer prosumer)
         {
             _prosumer = prosumer;
             _transactionManager = new TransactionManager();
             _consolePrinter = new ConsolePrinter();
+            _transactionSettler = new TransactionSettler();
         }
         public void DisplayMenu()
         {
@@ -23,7 +25,7 @@ namespace SmartGrid_ServerApp
             {
                 Console.Clear();
                 _consolePrinter.PrinterCenteredHeader("Welcome to transactionMenu.");
-                Console.WriteLine("From here you can (S)ell, (B)uy, view (P)ending or (C)ompleted transactions");
+                Console.WriteLine("From here you can (S)ell, (B)uy, view (P)ending transactions or (H)istory, or (C)omplete all pending transactions.");
                 var key = Console.ReadLine().ToLower();
                 switch (key)
                 {
@@ -58,8 +60,11 @@ namespace SmartGrid_ServerApp
                     case "p":
                         ShowPendingTransactions(_prosumer);
                         break;
-                    case "c":
+                    case "h":
                         ShowTransactionHistory(_prosumer);
+                        break;
+                    case "c":
+                        CompleteDailyTransactions();
                         break;
                 }
             }
@@ -109,6 +114,11 @@ namespace SmartGrid_ServerApp
                 Console.WriteLine();
             }
             Console.ReadKey();
+        }
+
+        private void CompleteDailyTransactions()
+        {
+            _transactionSettler.CompleteDailyTransactions();
         }
     }
 }

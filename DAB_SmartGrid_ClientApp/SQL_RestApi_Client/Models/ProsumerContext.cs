@@ -15,7 +15,7 @@ namespace SQL_RestApi_Client.Models
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
     
-        public ProsumerContext() : base("name=ProsumerContext")
+        public ProsumerContext() : base("name=E17I4DABH4Gr8")
         {
         }
 

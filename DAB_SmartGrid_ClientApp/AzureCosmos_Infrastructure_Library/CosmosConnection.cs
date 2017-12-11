@@ -7,8 +7,8 @@ namespace AzureCosmos_Infrastructure_Library
 {
     public class CosmosConnection
     {
-        private const string EndpointUrl = "https://localhost:8081";
-        private const string PrimaryKey = "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
+        private const string EndpointUrl = "https://e17i4dab.documents.azure.com:443/";
+        private const string PrimaryKey = "yKZkWkft7yTABm1e8ZaVuDpDLv5t3LkJvbXjwQHzzoWZz0UkvrYaXkWkVkfKoRQe0Vvv9GfuBpXNtfzMBtqcPA==";
 
         public static DocumentClient Client;
 
