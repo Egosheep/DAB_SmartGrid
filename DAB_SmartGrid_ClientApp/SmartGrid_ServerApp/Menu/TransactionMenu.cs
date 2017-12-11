@@ -21,12 +21,13 @@ namespace SmartGrid_ServerApp
         }
         public void DisplayMenu()
         {
-            while (true)
+            string key = "null";
+            while (key.ToLower() != "e")
             {
                 Console.Clear();
                 _consolePrinter.PrinterCenteredHeader("Welcome to transactionMenu.");
-                Console.WriteLine("From here you can (S)ell, (B)uy, view (P)ending transactions or (H)istory, or (C)omplete all pending transactions.");
-                var key = Console.ReadLine().ToLower();
+                Console.WriteLine("(S)ell (B)uy Power\nView (P)ending transactions or (H)istory\n(C)omplete all pending transactions\n(E)xit");
+                key = Console.ReadLine().ToLower();
                 switch (key)
                 {
                     case "s":
@@ -65,6 +66,8 @@ namespace SmartGrid_ServerApp
                         break;
                     case "c":
                         CompleteDailyTransactions();
+                        break;
+                    case "e":
                         break;
                 }
             }
